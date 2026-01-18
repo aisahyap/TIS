@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assignment Hub</title>
+  <title>TIS E-PORTFOLIO</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,13 +45,26 @@
     <div class="w-full min-h-full px-4 py-12">
       <!-- Header -->
       <header class="text-center mb-12">
-        <h1 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-3">Assignment Hub</h1>
+        <h1 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-3">TIS E-PORTFOLIO</h1>
         <p id="subtitle" class="text-purple-300 text-lg">Click on an assignment to view details</p>
       </header>
 
       <!-- Assignment Grid -->
       <div class="max-w-4xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <button onclick="openModal(0)" class="assignment-card bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+
+        <!-- NEW: PC Assemble Tab -->
+        <button onclick="openModal(0)" class="assignment-card bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl p-6 text-left shadow-lg shadow-indigo-500/20 hover:shadow-xl hover:shadow-indigo-500/30">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">🖥️</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">PC Assemble</h3>
+          <p class="text-blue-100 text-sm">Reflection on building a PC</p>
+        </button>
+
+        <!-- Assignment 1 -->
+        <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <span class="text-2xl">📝</span>
@@ -61,7 +74,8 @@
           <p class="text-pink-100 text-sm">Video for Industrial Visit 1</p>
         </button>
 
-        <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+        <!-- Assignment 2 -->
+        <button onclick="openModal(2)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <span class="text-2xl">💻</span>
@@ -71,7 +85,8 @@
           <p class="text-pink-100 text-sm">Poster for Industrial Talk 1</p>
         </button>
 
-        <button onclick="openModal(2)" class="assignment-card bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-rose-500/20 hover:shadow-xl hover:shadow-rose-500/30">
+        <!-- Assignment 3 -->
+        <button onclick="openModal(3)" class="assignment-card bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-rose-500/20 hover:shadow-xl hover:shadow-rose-500/30">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <span class="text-2xl">📊</span>
@@ -81,7 +96,8 @@
           <p class="text-rose-100 text-sm">Academic Writing for Industrial Talk 2</p>
         </button>
 
-        <button onclick="openModal(3)" class="assignment-card bg-gradient-to-br from-pink-600 to-rose-700 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+        <!-- Assignment 4 -->
+        <button onclick="openModal(4)" class="assignment-card bg-gradient-to-br from-pink-600 to-rose-700 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <span class="text-2xl">🎨</span>
@@ -91,7 +107,8 @@
           <p class="text-pink-100 text-sm">Newsletter for Industrial Visit 2</p>
         </button>
 
-        <button onclick="openModal(4)" class="assignment-card bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-fuchsia-500/20 hover:shadow-xl hover:shadow-fuchsia-500/30">
+        <!-- Project Design Thinking -->
+        <button onclick="openModal(5)" class="assignment-card bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-fuchsia-500/20 hover:shadow-xl hover:shadow-fuchsia-500/30">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
               <span class="text-2xl">🎯</span>
@@ -142,6 +159,13 @@
   <script>
     const assignments = [
       {
+        title: "PC Assemble",
+        type: "Reflection on building a PC",
+        icon: "🖥️",
+        gradient: "from-indigo-500 to-blue-600",
+        description: "During the PC assembly, I learned how to carefully connect each component, including the motherboard, CPU, RAM, storage, and GPU. I realized the importance of proper cable management and ensuring all parts are compatible. The experience improved my understanding of hardware systems and how each component works together to create a functional computer. It also taught me patience and attention to detail, especially when handling delicate components."
+      },
+      {
         title: "Assignment 1",
         type: "Video for Industrial Visit 1",
         icon: "📝",
@@ -190,32 +214,12 @@
 
       header.className = `p-6 bg-gradient-to-r ${assignment.gradient}`;
 
-      if (index === 0) {
-        linksSection.innerHTML = `
-          <div class="bg-slate-700/50 rounded-2xl p-4">
-            <h4 class="text-white font-semibold mb-3">Video Link</h4>
-            <a href="https://youtu.be/YbkUN-8s45k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-pink-300 hover:text-pink-200 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span class="underline">Watch Industrial Visit Video</span>
-            </a>
-          </div>
-
-          <div class="bg-slate-700/50 rounded-2xl p-4">
-            <h4 class="text-white font-semibold mb-2">Reflection</h4>
-            <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
-          </div>
-        `;
-      } else {
-        linksSection.innerHTML = `
-          <div class="bg-slate-700/50 rounded-2xl p-4">
-            <h4 class="text-white font-semibold mb-2">Reflection</h4>
-            <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
-          </div>
-        `;
-      }
+      linksSection.innerHTML = `
+        <div class="bg-slate-700/50 rounded-2xl p-4">
+          <h4 class="text-white font-semibold mb-2">Reflection</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
+        </div>
+      `;
 
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -233,4 +237,5 @@
   </script>
 </body>
 </html>
+
 
