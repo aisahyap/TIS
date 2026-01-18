@@ -48,23 +48,23 @@
     <div class="max-w-4xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3"><!-- Assignment 1 --> <button onclick="openModal(0)" class="assignment-card bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
       <div class="flex items-center gap-3 mb-4">
        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">📝</span>
-       </div><span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Due: Week 2</span>
-      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 1</h3><p class="text-pink-100 text-sm">Research &amp; Analysis</p></button> <!-- Assignment 2 --> <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 1</h3><p class="text-pink-100 text-sm">Video for Industrial Visit 1</p></button> <!-- Assignment 2 --> <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
       <div class="flex items-center gap-3 mb-4">
        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">💻</span>
-       </div><span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Due: Week 4</span>
+       </div>
       </div><h3 class="text-xl font-bold text-white mb-2">Assignment 2</h3><p class="text-pink-100 text-sm">Programming Project</p></button> <!-- Assignment 3 --> <button onclick="openModal(2)" class="assignment-card bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-rose-500/20 hover:shadow-xl hover:shadow-rose-500/30">
       <div class="flex items-center gap-3 mb-4">
-       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">📊</span>
-       </div><span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Due: Week 6</span>
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">��</span>
+       </div>
       </div><h3 class="text-xl font-bold text-white mb-2">Assignment 3</h3><p class="text-rose-100 text-sm">Data Presentation</p></button> <!-- Assignment 4 --> <button onclick="openModal(3)" class="assignment-card bg-gradient-to-br from-pink-600 to-rose-700 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
       <div class="flex items-center gap-3 mb-4">
        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">🎨</span>
-       </div><span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Due: Week 8</span>
+       </div>
       </div><h3 class="text-xl font-bold text-white mb-2">Assignment 4</h3><p class="text-pink-100 text-sm">Creative Design</p></button> <!-- Assignment 5 --> <button onclick="openModal(4)" class="assignment-card bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-fuchsia-500/20 hover:shadow-xl hover:shadow-fuchsia-500/30">
       <div class="flex items-center gap-3 mb-4">
        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">🎯</span>
-       </div><span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Due: Week 10</span>
+       </div>
       </div><h3 class="text-xl font-bold text-white mb-2">Assignment 5</h3><p class="text-pink-100 text-sm">Final Project</p></button>
     </div>
    </div><!-- Modal -->
@@ -88,21 +88,14 @@
       </div><!-- Modal Body -->
       <div class="p-6">
        <div class="space-y-4">
-        <div class="flex items-center gap-3 text-slate-300">
-         <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-         </svg><span id="modal-due" class="font-medium">Due: Week 2</span>
-        </div>
-        <div class="bg-slate-700/50 rounded-2xl p-4">
-         <h4 class="text-white font-semibold mb-2">Description</h4>
-         <p id="modal-description" class="text-slate-300 text-sm leading-relaxed">Complete a comprehensive research paper analyzing current trends in your field of study. Include at least 5 academic sources and provide critical analysis.</p>
-        </div>
-        <div class="bg-slate-700/50 rounded-2xl p-4">
-         <h4 class="text-white font-semibold mb-2">Requirements</h4>
-         <ul id="modal-requirements" class="text-slate-300 text-sm space-y-2">
-          <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span> <span>Minimum 2000 words</span></li>
-          <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span> <span>APA citation format</span></li>
-          <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">•</span> <span>Include bibliography</span></li>
-         </ul>
+        <div id="modal-links" class="hidden space-y-3">
+         <div class="bg-slate-700/50 rounded-2xl p-4">
+          <h4 class="text-white font-semibold mb-3">Video Link</h4><a href="https://youtu.be/YbkUN-8s45k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-pink-300 hover:text-pink-200 transition-colors">
+           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+           </svg><span class="underline">Watch Industrial Visit Video</span> </a>
+         </div>
+         <div class="bg-slate-700/50 rounded-2xl p-4"><label for="reflection-link" class="block text-white font-semibold mb-2">Reflection Link</label> <input type="url" id="reflection-link" placeholder="Enter reflection document URL" class="w-full bg-slate-600 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+         </div>
         </div>
        </div>
       </div>
@@ -114,12 +107,12 @@
     const assignments = [
       {
         title: "Assignment 1",
-        type: "Research & Analysis",
+        type: "Video for Industrial Visit 1",
         icon: "📝",
         due: "Due: Week 2",
         gradient: "from-pink-500 to-rose-600",
-        description: "Complete a comprehensive research paper analyzing current trends in your field of study. Include at least 5 academic sources and provide critical analysis.",
-        requirements: ["Minimum 2000 words", "APA citation format", "Include bibliography"]
+        description: "During the visit, we explored several technology booths that exposed us to real-world applications of information technology. At the Dell booth, we learned about laptops and tablets designed for military use, highlighting the need for strong, secure, and durable devices.\n\nWe also visited the TecD Distribution Oracle booth, where we were introduced to artificial intelligence and machine learning and how they are used in business. This helped us understand how AI supports decision-making and improves efficiency.\n\nAdditionally, we visited the Oracle and Archibus booths, which focused on enterprise systems and facilities management. Overall, the visit increased my understanding of how technology is applied in different industries and was a valuable learning experience.",
+        requirements: ["Minimum 5-10 minutes duration", "Include facility footage", "Interview segments", "Professional editing"]
       },
       {
         title: "Assignment 2",
@@ -172,22 +165,43 @@
       const assignment = assignments[index];
       const modal = document.getElementById('modal');
       const header = document.getElementById('modal-header');
+      const linksSection = document.getElementById('modal-links');
       
       document.getElementById('modal-icon').textContent = assignment.icon;
       document.getElementById('modal-title').textContent = assignment.title;
       document.getElementById('modal-type').textContent = assignment.type;
-      document.getElementById('modal-due').textContent = assignment.due;
-      document.getElementById('modal-description').textContent = assignment.description;
       
       header.className = `p-6 bg-gradient-to-r ${assignment.gradient}`;
       
-      const reqList = document.getElementById('modal-requirements');
-      reqList.innerHTML = assignment.requirements.map(req => `
-        <li class="flex items-start gap-2">
-          <span class="text-purple-400 mt-0.5">•</span>
-          <span>${req}</span>
-        </li>
-      `).join('');
+      // Build the links section content
+      if (index === 0) {
+        linksSection.innerHTML = `
+          <div class="bg-slate-700/50 rounded-2xl p-4">
+            <h4 class="text-white font-semibold mb-3">Video Link</h4>
+            <a href="https://youtu.be/YbkUN-8s45k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-pink-300 hover:text-pink-200 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="underline">Watch Industrial Visit Video</span>
+            </a>
+          </div>
+
+          <div class="bg-slate-700/50 rounded-2xl p-4">
+            <h4 class="text-white font-semibold mb-2">Reflection</h4>
+            <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
+          </div>
+        `;
+        linksSection.classList.remove('hidden');
+      } else {
+        linksSection.innerHTML = `
+          <div class="bg-slate-700/50 rounded-2xl p-4">
+            <h4 class="text-white font-semibold mb-2">Reflection</h4>
+            <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
+          </div>
+        `;
+        linksSection.classList.remove('hidden');
+      }
       
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -233,5 +247,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bfec1f236ae3c6f',t:'MTc2ODc0NjI4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bfee652c6583c6f',t:'MTc2ODc0Nzc3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
