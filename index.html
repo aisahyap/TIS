@@ -1,195 +1,179 @@
 <!doctype html>
 <html lang="en" class="h-full">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment Hub</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     body {
       box-sizing: border-box;
+    }
+    * {
       font-family: 'DM Sans', sans-serif;
     }
-
     .assignment-card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .assignment-card:hover {
       transform: translateY(-4px);
     }
-
     .modal-backdrop {
       animation: fadeIn 0.2s ease-out;
     }
     .modal-content {
       animation: slideUp 0.3s ease-out;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(20px) scale(0.95); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
   </style>
-</head>
-
-<body class="h-full">
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
   <div id="app-wrapper" class="w-full h-full overflow-auto bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-    <div class="w-full min-h-full px-4 py-12">
-      <!-- Header -->
-      <header class="text-center mb-12">
-        <h1 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-3">Assignment Hub</h1>
-        <p id="subtitle" class="text-purple-300 text-lg">Click on an assignment to view details</p>
-      </header>
-
-      <!-- Assignment Grid -->
-      <div class="max-w-4xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <button onclick="openModal(0)" class="assignment-card bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-              <span class="text-2xl">📝</span>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Assignment 1</h3>
-          <p class="text-pink-100 text-sm">Video for Industrial Visit 1</p>
-        </button>
-
-        <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-              <span class="text-2xl">💻</span>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Assignment 2</h3>
-          <p class="text-pink-100 text-sm">Poster for Industrial Talk 1</p>
-        </button>
-
-        <button onclick="openModal(2)" class="assignment-card bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-rose-500/20 hover:shadow-xl hover:shadow-rose-500/30">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-              <span class="text-2xl">📊</span>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Assignment 3</h3>
-          <p class="text-rose-100 text-sm">Academic Writing for Industrial Talk 2</p>
-        </button>
-
-        <button onclick="openModal(3)" class="assignment-card bg-gradient-to-br from-pink-600 to-rose-700 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-              <span class="text-2xl">🎨</span>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Assignment 4</h3>
-          <p class="text-pink-100 text-sm">Newsletter for Industrial Visit 2</p>
-        </button>
-
-        <button onclick="openModal(4)" class="assignment-card bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-fuchsia-500/20 hover:shadow-xl hover:shadow-fuchsia-500/30">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-              <span class="text-2xl">🎯</span>
-            </div>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Assignment 5</h3>
-          <p class="text-pink-100 text-sm">Project Design Thinking</p>
-        </button>
-      </div>
+   <div class="w-full min-h-full px-4 py-12"><!-- Header -->
+    <header class="text-center mb-12">
+     <h1 id="page-title" class="text-4xl md:text-5xl font-bold text-white mb-3">Assignment Hub</h1>
+     <p id="subtitle" class="text-purple-300 text-lg">Click on an assignment to view details</p>
+    </header><!-- Assignment Grid -->
+    <div class="max-w-4xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-3"><!-- Assignment 1 --> <button onclick="openModal(0)" class="assignment-card bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">📝</span>
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 1</h3><p class="text-pink-100 text-sm">Video for Industrial Visit 1</p></button> <!-- Assignment 2 --> <button onclick="openModal(1)" class="assignment-card bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">💻</span>
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 2</h3><p class="text-pink-100 text-sm">Programming Project</p></button> <!-- Assignment 3 --> <button onclick="openModal(2)" class="assignment-card bg-gradient-to-br from-rose-400 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-rose-500/20 hover:shadow-xl hover:shadow-rose-500/30">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">��</span>
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 3</h3><p class="text-rose-100 text-sm">Data Presentation</p></button> <!-- Assignment 4 --> <button onclick="openModal(3)" class="assignment-card bg-gradient-to-br from-pink-600 to-rose-700 rounded-2xl p-6 text-left shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">🎨</span>
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 4</h3><p class="text-pink-100 text-sm">Creative Design</p></button> <!-- Assignment 5 --> <button onclick="openModal(4)" class="assignment-card bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-2xl p-6 text-left shadow-lg shadow-fuchsia-500/20 hover:shadow-xl hover:shadow-fuchsia-500/30">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><span class="text-2xl">🎯</span>
+       </div>
+      </div><h3 class="text-xl font-bold text-white mb-2">Assignment 5</h3><p class="text-pink-100 text-sm">Final Project</p></button>
     </div>
-
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
-      <div class="flex items-center justify-center min-h-full p-4" onclick="event.stopPropagation()">
-        <div class="modal-content relative bg-slate-800 rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden">
-          <!-- Modal Header -->
-          <div id="modal-header" class="p-6 bg-gradient-to-r from-pink-500 to-rose-600">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-4">
-                <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
-                  <span id="modal-icon" class="text-3xl">📝</span>
-                </div>
-                <div>
-                  <h2 id="modal-title" class="text-2xl font-bold text-white">Assignment 1</h2>
-                  <p id="modal-type" class="text-white/80">Research & Analysis</p>
-                </div>
-              </div>
-              <button onclick="closeModal()" class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-xl flex items-center justify-center transition-colors">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Modal Body -->
-          <div class="p-6">
-            <div id="modal-links" class="space-y-4">
-              <!-- Content loaded dynamically -->
-            </div>
-          </div>
+   </div><!-- Modal -->
+   <div id="modal" class="fixed inset-0 z-50 hidden">
+    <div class="modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="flex items-center justify-center min-h-full p-4">
+     <div class="modal-content relative bg-slate-800 rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden"><!-- Modal Header -->
+      <div id="modal-header" class="p-6 bg-gradient-to-r from-pink-500 to-rose-600">
+       <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+         <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center"><span id="modal-icon" class="text-3xl">📝</span>
+         </div>
+         <div>
+          <h2 id="modal-title" class="text-2xl font-bold text-white">Assignment 1</h2>
+          <p id="modal-type" class="text-white/80">Research &amp; Analysis</p>
+         </div>
+        </div><button onclick="closeModal()" class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-xl flex items-center justify-center transition-colors">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+         </svg></button>
+       </div>
+      </div><!-- Modal Body -->
+      <div class="p-6">
+       <div class="space-y-4">
+        <div id="modal-links" class="hidden space-y-3">
+         <div class="bg-slate-700/50 rounded-2xl p-4">
+          <h4 class="text-white font-semibold mb-3">Video Link</h4><a href="https://youtu.be/YbkUN-8s45k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-pink-300 hover:text-pink-200 transition-colors">
+           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+           </svg><span class="underline">Watch Industrial Visit Video</span> </a>
+         </div>
+         <div class="bg-slate-700/50 rounded-2xl p-4"><label for="reflection-link" class="block text-white font-semibold mb-2">Reflection Link</label> <input type="url" id="reflection-link" placeholder="Enter reflection document URL" class="w-full bg-slate-600 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+         </div>
         </div>
+       </div>
       </div>
+     </div>
     </div>
+   </div>
   </div>
-
   <script>
     const assignments = [
       {
         title: "Assignment 1",
         type: "Video for Industrial Visit 1",
         icon: "📝",
+        due: "Due: Week 2",
         gradient: "from-pink-500 to-rose-600",
-        description: "During the visit, we explored several technology booths that exposed us to real-world applications of information technology. At the Dell booth, we learned about laptops and tablets designed for military use, highlighting the need for strong, secure, and durable devices.\n\nWe also visited the TecD Distribution Oracle booth, where we were introduced to artificial intelligence and machine learning and how they are used in business. This helped us understand how AI supports decision-making and improves efficiency.\n\nAdditionally, we visited the Oracle and Archibus booths, which focused on enterprise systems and facilities management. Overall, the visit increased my understanding of how technology is applied in different industries and was a valuable learning experience."
+        description: "During the visit, we explored several technology booths that exposed us to real-world applications of information technology. At the Dell booth, we learned about laptops and tablets designed for military use, highlighting the need for strong, secure, and durable devices.\n\nWe also visited the TecD Distribution Oracle booth, where we were introduced to artificial intelligence and machine learning and how they are used in business. This helped us understand how AI supports decision-making and improves efficiency.\n\nAdditionally, we visited the Oracle and Archibus booths, which focused on enterprise systems and facilities management. Overall, the visit increased my understanding of how technology is applied in different industries and was a valuable learning experience.",
+        requirements: ["Minimum 5-10 minutes duration", "Include facility footage", "Interview segments", "Professional editing"]
       },
       {
         title: "Assignment 2",
-        type: "Poster for Industrial Talk 1",
+        type: "Programming Project",
         icon: "💻",
+        due: "Due: Week 4",
         gradient: "from-violet-500 to-purple-600",
-        description: "We attended an industrial talk by PPG, a global leader in paints, coatings, and specialty materials, which provided valuable insight into how large multinational companies operate in today’s technology-driven environment. The session highlighted how PPG leverages data analytics, including data lakes and advanced analytics, to manage and analyze large volumes of data for better decision-making. The introduction to MLOps was particularly insightful, as it demonstrated how machine learning models are deployed, monitored, and maintained efficiently in real-world industrial settings. In addition, the discussion on global infrastructure showed how PPG supports its worldwide operations with scalable and reliable systems. The talk also introduced SAP as a key enterprise platform used to integrate business processes and support organizational needs."
+        description: "Build a functional web application that demonstrates your understanding of frontend and backend development concepts. Focus on clean code and documentation.",
+        requirements: ["Fully functional application", "Code documentation", "User-friendly interface"]
       },
       {
         title: "Assignment 3",
-        type: "Academic Writing for Industrial Talk 2",
+        type: "Data Presentation",
         icon: "📊",
+        due: "Due: Week 6",
         gradient: "from-cyan-500 to-blue-600",
-        description: "The industrial talk on project management and system development life cycle (SDLC) provided meaningful insight into how structured methodologies are applied in real-world software projects. The speaker explained the different phases of SDLC, from planning and requirement analysis to development, testing, deployment, and maintenance. They also emphasized the importance of project management skills such as planning, teamwork, communication, and risk management in ensuring project success."
+        description: "Collect, analyze, and present data on a topic of your choice. Create visualizations that effectively communicate your findings to a non-technical audience.",
+        requirements: ["Minimum 3 visualizations", "Written analysis report", "Data sources cited"]
       },
       {
         title: "Assignment 4",
-        type: "Newsletter for Industrial Visit 2",
+        type: "Creative Design",
         icon: "🎨",
+        due: "Due: Week 8",
         gradient: "from-amber-500 to-orange-600",
-        description: "During this visit, we gained valuable insight into the operations of Johor Port Berhad’s ICT department. The session provided a clear understanding of how the department supports the port’s daily activities through its infrastructure and business applications. The presentation highlighted the strategic vision of the department and how they focus on future innovation and improvement."
+        description: "Design a complete brand identity for a fictional company, including logo, color palette, typography, and marketing materials that reflect the brand values.",
+        requirements: ["Logo design", "Style guide document", "3 marketing mockups"]
       },
       {
         title: "Assignment 5",
-        type: "Project Design Thinking",
+        type: "Final Project",
         icon: "🎯",
+        due: "Due: Week 10",
         gradient: "from-emerald-500 to-teal-600",
-        description: "We started by identifying the needs of moviegoers, such as easy access to showtimes, quick ticket booking, and personalized recommendations. Using design thinking, we focused on understanding the user’s experience first. Throughout the project, we went through brainstorming, prototyping, and testing. The integration of AI added value through smart recommendations and faster booking decisions."
+        description: "Combine all skills learned throughout the course to deliver a comprehensive final project. This should demonstrate mastery of research, development, and presentation.",
+        requirements: ["Project proposal", "Working prototype", "Final presentation"]
       }
     ];
+
+    const defaultConfig = {
+      page_title: "Assignment Hub",
+      subtitle: "Click on an assignment to view details",
+      primary_color: "#1e1b4b",
+      text_color: "#ffffff",
+      accent_color: "#a855f7",
+      font_family: "DM Sans"
+    };
 
     function openModal(index) {
       const assignment = assignments[index];
       const modal = document.getElementById('modal');
       const header = document.getElementById('modal-header');
       const linksSection = document.getElementById('modal-links');
-
+      
       document.getElementById('modal-icon').textContent = assignment.icon;
       document.getElementById('modal-title').textContent = assignment.title;
       document.getElementById('modal-type').textContent = assignment.type;
-
+      
       header.className = `p-6 bg-gradient-to-r ${assignment.gradient}`;
-
+      
+      // Build the links section content
       if (index === 0) {
         linksSection.innerHTML = `
           <div class="bg-slate-700/50 rounded-2xl p-4">
@@ -208,6 +192,7 @@
             <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
           </div>
         `;
+        linksSection.classList.remove('hidden');
       } else {
         linksSection.innerHTML = `
           <div class="bg-slate-700/50 rounded-2xl p-4">
@@ -215,8 +200,9 @@
             <p class="text-slate-300 text-sm leading-relaxed">${assignment.description}</p>
           </div>
         `;
+        linksSection.classList.remove('hidden');
       }
-
+      
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
@@ -230,7 +216,36 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
-  </script>
-</body>
-</html>
 
+    async function onConfigChange(config) {
+      const title = config.page_title || defaultConfig.page_title;
+      const subtitle = config.subtitle || defaultConfig.subtitle;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      
+      document.getElementById('page-title').textContent = title;
+      document.getElementById('subtitle').textContent = subtitle;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => window.elementSdk.setConfig({ font_family: value })
+          },
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["page_title", config.page_title || defaultConfig.page_title],
+          ["subtitle", config.subtitle || defaultConfig.subtitle]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bfee652c6583c6f',t:'MTc2ODc0Nzc3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
