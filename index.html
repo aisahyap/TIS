@@ -220,11 +220,13 @@
 
       header.className = `p-6 bg-gradient-to-r ${assignment.gradient}`;
 
-      linksSection.innerHTML = `
-        <!-- LINK SECTION (ADD YOUR LINK HERE) -->
+        linksSection.innerHTML = `
+        <!-- LINK SECTION -->
         <div class="bg-slate-700/50 rounded-2xl p-4">
           <h4 class="text-white font-semibold mb-2">Link</h4>
-          <p class="text-slate-300 text-sm">Add your link here later.</p>
+          <a href="${assignment.link}" target="_blank" rel="noopener noreferrer" class="text-pink-300 hover:text-pink-200 underline">
+            Open Link
+          </a>
         </div>
 
         <!-- REFLECTION SECTION -->
